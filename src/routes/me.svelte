@@ -22,7 +22,24 @@
   about.content = about.content.replace(/%years%/, howOldAmI())
 </script>
 
-<main>
-  <section>{@html about.content}</section>
-</main>
+<style>
+  section {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  article {
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+    grid-gap: 20px;
+  }
+</style>
 
+<section>
+  <article>
+    {@html about.content}
+  </article>
+</section>

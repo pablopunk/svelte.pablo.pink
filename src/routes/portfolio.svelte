@@ -29,38 +29,36 @@
   }
 </style>
 
-<main>
-  <section>
-    <h2>{portfolio.introHeader}</h2>
-    <p>{@html portfolio.abstract}</p>
-  </section>
-  <section>
-    <h3>{portfolio.exampleProjectsHeader}</h3>
-    {#each allExampleProjects as project}
-      <article>
-        <figure>
-          <img alt={project.picture.alt} src={project.picture.url} />
-          <caption>{project.name}</caption>
-        </figure>
-        <div>{@html project.description}</div>
-      </article>
+<section>
+  <h2>{portfolio.introHeader}</h2>
+  <p>{@html portfolio.abstract}</p>
+</section>
+<section>
+  <h3>{portfolio.exampleProjectsHeader}</h3>
+  {#each allExampleProjects as project}
+    <article>
+      <figure>
+        <img alt={project.picture.alt} src={project.picture.url} />
+        <caption>{project.name}</caption>
+      </figure>
+      <div>{@html project.description}</div>
+    </article>
+  {/each}
+</section>
+<section>
+  <div>{@html portfolio.githubReposIntroduction}</div>
+  <div>
+    {#if repos}
+    {#each repos as repo}
+      <li>
+        <strong>/{repo.name} ⭐️ {repo.stargazers_count}</strong>
+        <p>{repo.description}</p>
+      </li>
     {/each}
-  </section>
-  <section>
-    <div>{@html portfolio.githubReposIntroduction}</div>
-    <div>
-      {#if repos}
-      {#each repos as repo}
-        <li>
-          <strong>/{repo.name} ⭐️ {repo.stargazers_count}</strong>
-          <p>{repo.description}</p>
-        </li>
-      {/each}
-      {:else}
-        <p>Loading...</p>
-      {/if}
-    </div>
-  </section>
-</main>
+    {:else}
+      <p>Loading...</p>
+    {/if}
+  </div>
+</section>
 
 

@@ -1,5 +1,10 @@
 <script>
 	export let segment;
+  export let nav;
+
+  if (segment == null) {
+    segment = ''
+  }
 </script>
 
 <style>
@@ -50,9 +55,8 @@
 
 <nav>
 	<ul>
-		<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.'>home</a></li>
-		<li><a aria-current='{segment === "about" ? "page" : undefined}' href='about'>about</a></li>
-		<li><a aria-current='{segment === "portfolio" ? "page" : undefined}' href='portfolio'>portfolio</a></li>
-		<li><a aria-current='{segment === "contact" ? "page" : undefined}' href='contact'>contact</a></li>
+    {#each nav.main as button}
+      <li><a aria-current='{segment === button.link ? "page" : undefined}' href={'/'+button.link}>{button.text}</a></li>
+    {/each}
 	</ul>
 </nav>

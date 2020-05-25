@@ -13,7 +13,6 @@ async function fetchAPI(query, variables = {}, preview, apiToken) {
       query: `
         query MyQuery($locale: SiteLocale) {
           ${query}
-          ${globalQueries}
         }
       `,
       variables,
@@ -30,7 +29,7 @@ async function fetchAPI(query, variables = {}, preview, apiToken) {
   return json.data;
 }
 
-const globalQueries = `
+const navQuery = `
   nav(locale: $locale) {
     main {
       id
@@ -41,14 +40,13 @@ const globalQueries = `
     changeThemeButtonDark
     donateText
   }
+`
+
+const footerQuery = `
   footer(locale: $locale) {
     copyright(markdown: true)
   }
-  header(locale: $locale) {
-    title
-    subtitle
-  }
-`;
+`
 
 const commonPageQueries = `
   metaTags {
@@ -133,5 +131,11 @@ export async function fetchData(
         preview,
         apiToken
       );
+
+    case "nav":
+      return fetchAPI(navQuery, {locale}, preview, apiToken)
+
+    case "footer":
+      return fetchAPI(footerQuery, {locale}, preview, apiToken)
   }
 }

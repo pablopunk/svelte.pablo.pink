@@ -12,8 +12,6 @@
   export let contact
 </script>
 
-<main>
-  <section>{@html contact.content}</section>
-</main>
+<section>{@html contact.content}</section>
 
 

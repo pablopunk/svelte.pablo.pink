@@ -10,8 +10,6 @@
 
 <script>
   export let home
-  /* export let nav */
-  /* export let footer */
 </script>
 
 <style>
@@ -21,6 +19,13 @@
     border: 3px solid aqua;
   }
   section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  article {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,15 +36,14 @@
   <title>{home.metaTags.title}</title>
 </svelte:head>
 
-<main>
-  <section><h1>pablo.pink</h1></section>
-  <section>
+<section>
+  <article><h1>pablo.pink</h1></article>
+  <article>
     <figure>
       <img alt={home.profilePicture.alt} src={home.profilePicture.url} />
     </figure>
     <div>
       {@html home.abstract}
     </div>
-  </section>
-</main>
-
+  </article>
+</section>
