@@ -9,3 +9,4 @@ Deployed to Vercel: [svelte.pablo.pink](https://svelte.pablo.pink/)
 - Some styles
 - Localization
 - Meta tags from CMS on each page
+- Phone view
