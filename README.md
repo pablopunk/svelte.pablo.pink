@@ -6,8 +6,6 @@ Deployed to Vercel: [svelte.pablo.pink](https://svelte.pablo.pink/)
 
 [WIP]. Missing:
 
-- Styles
+- Some styles
 - Localization
-- Bugs like repos not being fetched
-- Nav and footer from CMS
-- Meta tags from CMS
+- Meta tags from CMS on each page

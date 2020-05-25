@@ -19,7 +19,7 @@
     border: 3px solid aqua;
   }
   section {
-    height: 80vh;
+    height: calc(100vh - var(--footer-height) - var(--nav-height));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@
   article {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 </style>
 

@@ -7,7 +7,7 @@
 
     return {
       ...navRes,
-      ...footerRes,
+      ...footerRes
     }
   }
 </script>
@@ -24,16 +24,17 @@
 	main {
 		position: relative;
 		max-width: 56em;
-		background-color: white;
-		padding: 2em;
+		padding: 0 1rem;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
   footer {
-    width: 100vw;
+    width: 95vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: var(--footer-height);
+    margin: 0 auto;
   }
 </style>
 

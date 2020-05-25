@@ -12,6 +12,16 @@
   export let contact
 </script>
 
+<style>
+  section {
+    height: calc(100vh - var(--footer-height) - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
 <section>{@html contact.content}</section>
 
 

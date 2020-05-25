@@ -1,36 +1,54 @@
+:root {
+  --footer-height: 7vh;
+  --nav-height: 56px;
+  --theme-light-bg: white;
+  --theme-dark-bg: black;
+  --theme-light-fg: black;
+  --theme-dark-fg: white;
+  --theme-light-color1: royalblue;
+  --theme-dark-color1: cyan;
+  --theme-light-color2: tomato;
+  --theme-dark-color2: #ff6e9d;
+}
 body {
-	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #333;
+  margin: 0;
+  padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--theme-light-fg);
+  background-color: var(--theme-light-bg);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5em 0;
-	font-weight: 400;
-	line-height: 1.2;
+body.dark {
+  color: var(--theme-dark-fg);
+  background-color: var(--theme-dark-bg);
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2rem;
+}
+
+.dark h1 {
+  color: var(--theme-dark-color1);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--theme-light-color1);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--theme-dark-color1);
 }
 
 a {
-	color: inherit;
+  color: var(--theme-light-color2);
 }
 
-code {
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	color: #555;
-	background-color: #f0f0f0;
-	padding: 0.2em 0.4em;
-	border-radius: 2px;
+.dark a {
+  color: var(--theme-dark-color2);
 }
 
-@media (min-width: 400px) {
-	body {
-		font-size: 16px;
-	}
-}

@@ -24,7 +24,7 @@
 
 <style>
   section {
-    height: 75vh;
+    height: calc(100vh - var(--footer-height) - var(--nav-height));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,6 @@
     max-width: 600px;
     display: grid;
     grid-template-columns: 1fr 15fr;
-    grid-gap: 20px;
   }
 </style>
 
